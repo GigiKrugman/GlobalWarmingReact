@@ -24,7 +24,7 @@ export default function GraphContainer() {
     <div className="graph--container">
       <div className="button--container">
         <button onClick={() => setCurrentComponent("Arctic")}>Arctic</button>
-        <button onClick={() => setCurrentComponent("CarbonDioxide ")}>
+        <button onClick={() => setCurrentComponent("CarbonDioxide")}>
           CO2
         </button>
         <button onClick={() => setCurrentComponent("NitrousOxide")}>
