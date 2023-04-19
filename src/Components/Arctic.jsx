@@ -14,7 +14,7 @@ export default function Arctic() {
 
   return (
     <div>
-      <Chart data={data} dataKey="extent" title="Arctic" />
+      <Chart data={data} dataKeys={["extent", "area"]} title="Arctic" />
     </div>
   );
 }

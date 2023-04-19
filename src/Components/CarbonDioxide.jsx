@@ -15,7 +15,7 @@ export default function CarbonDioxide() {
 
   return (
     <div>
-      <Chart data={data} dataKey="trend" title="Co2" />
+      <Chart data={data} dataKeys={["cycle", "trend"]} title="Co2" />
     </div>
   );
 }

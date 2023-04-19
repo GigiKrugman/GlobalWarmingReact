@@ -10,11 +10,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function Chart({ data, title }) {
+export default function Chart({ data, dataKeys, title }) {
   return (
     <div className="chart--container">
       <h2>{title}</h2>
-      <ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -24,8 +24,14 @@ export default function Chart({ data, title }) {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="extent" stroke="#8884d8" />
-          <Line type="monotone" dataKey="area" stroke="#82ca9d" />
+          {dataKeys.map((key, index) => (
+            <Line
+              key={key}
+              type="monotone"
+              dataKey={key}
+              stroke={index % 2 === 0 ? "#8884d8" : "#82ca9d"}
+            />
+          ))}
         </LineChart>
       </ResponsiveContainer>
     </div>
