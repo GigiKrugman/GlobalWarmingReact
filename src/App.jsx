@@ -1,17 +1,11 @@
-import Arctic from "../src/Components/Arctic";
-import CarbonDioxide from "./Components/CarbonDioxide";
 import "./App.css";
 import "./assets/Css/Chart.css";
-import NitrousOxide from "./Components/NitrousOxide";
-import Temperature from "./Components/Temperature";
 
+import GraphContainer from "./Components/GraphContainer";
 function App() {
   return (
     <div className="App">
-      <Arctic />
-      <CarbonDioxide />
-      <NitrousOxide />
-      <Temperature />
+      <GraphContainer />
     </div>
   );
 }
