@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import api from "../ApiRequest";
 import Chart from "../ChartContainer/Chart";
 import { ReactComponent as MethaneSvg } from "../../assets/Images/Methane.svg";
+import textContent from "../../textContent";
+import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
 
 export default function Methane() {
   const [data, setData] = useState([]);
@@ -21,6 +23,10 @@ export default function Methane() {
         <h2 className="title--header">Methane</h2>
       </div>
       <Chart data={data} dataKeys={["date", "average", "trend"]} />
+      <ExpandableContainer
+        title={textContent.methane.title}
+        content={textContent.methane.content}
+      />
     </div>
   );
 }

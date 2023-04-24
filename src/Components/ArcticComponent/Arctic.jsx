@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import api from "../ApiRequest";
 import Chart from "../ChartContainer/Chart";
 import { ReactComponent as ArcticSvg } from "../../assets/Images/arctic.svg";
+import textContent from "../../textContent";
+import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
+
 export default function Arctic() {
   const [data, setData] = useState([]);
 
@@ -21,6 +24,10 @@ export default function Arctic() {
       </div>
 
       <Chart data={data} dataKeys={["extent", "area"]} />
+      <ExpandableContainer
+        title={textContent.arctic.title}
+        content={textContent.arctic.content}
+      />
     </div>
   );
 }
