@@ -1,8 +1,9 @@
 import "./App.css";
-import "./assets/Css/GraphContainer.css";
-import "./assets/Css/Chart.css";
+import "../src/Components/GraphContainer/GraphContainer.css";
+import "./Components/ChartContainer/Chart.css";
+import "./Components/ArcticComponent/Arctic.css";
 
-import GraphContainer from "./Components/GraphContainer";
+import GraphContainer from "./Components/GraphContainer/GraphContainer";
 function App() {
   return (
     <div className="App">
