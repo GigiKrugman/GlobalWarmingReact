@@ -24,8 +24,8 @@ export default function NitrousOxide() {
       </div>
       <Chart data={data} dataKeys={["date", "average", "trend"]} />
       <ExpandableContainer
-        title={textContent.nitrousDioxide.title}
-        content={textContent.nitrousDioxide.content}
+        title={textContent.nitrousOxide.title}
+        content={textContent.nitrousOxide.content}
       />
     </div>
   );
