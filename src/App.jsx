@@ -1,14 +1,14 @@
 import "./App.css";
-import "../src/Components/GraphContainer/GraphContainer.css";
+import "./Components/Homepage/Home.css";
 import "./Components/ChartContainer/Chart.css";
 import "./Components/ArcticComponent/Arctic.css";
 import "./Components/ExpandableContainer/ExpandableContainer.css";
-
-import GraphContainer from "./Components/GraphContainer/GraphContainer";
+import "./Components/LoadingComponent/Loading.css";
+import Home from "./Components/Homepage/Home";
 function App() {
   return (
     <div className="App">
-      <GraphContainer />
+      <Home />
     </div>
   );
 }

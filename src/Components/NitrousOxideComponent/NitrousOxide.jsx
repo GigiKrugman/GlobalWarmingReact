@@ -5,16 +5,26 @@ import Chart from "../ChartContainer/Chart";
 import { ReactComponent as NoSvg } from "../../assets/Images/NitrousOxide.svg";
 import textContent from "../../textContent";
 import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
+import Loading from "../LoadingComponent/Loading";
 
 export default function NitrousOxide() {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.get("/nitrous-oxide-api").then((response) => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    try {
+      const response = await api.get("/nitrous-oxide-api");
       console.log(response);
       setData(response.data.nitrous);
-    });
-  });
+      setIsLoading(false);
+    } catch (error) {
+      console.log("Error loading data", error);
+    }
+  };
 
   return (
     <div>
@@ -22,11 +32,17 @@ export default function NitrousOxide() {
         <NoSvg className="title-svg" />
         <h2 className="title--header">NitrousOxide</h2>
       </div>
-      <Chart data={data} dataKeys={["date", "average", "trend"]} />
-      <ExpandableContainer
-        title={textContent.nitrousOxide.title}
-        content={textContent.nitrousOxide.content}
-      />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <Chart data={data} dataKeys={["date", "average", "trend"]} />
+          <ExpandableContainer
+            title={textContent.nitrousOxide.title}
+            content={textContent.nitrousOxide.content}
+          />
+        </>
+      )}
     </div>
   );
 }

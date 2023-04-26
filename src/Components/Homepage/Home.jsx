@@ -5,14 +5,16 @@ import NitrousOxide from "../NitrousOxideComponent/NitrousOxide";
 import Temperature from "../TemperatureComponent/Temperature";
 import Methane from "../MethaneComponent/Methane";
 
-export default function GraphContainer() {
+export default function Home() {
   const [currentComponent, setCurrentComponent] = useState("Arctic");
+  //const [isLoading, setIsLoading] = useState(true);
 
   const isActive = (component) => {
     return currentComponent === component ? "active" : "";
   };
 
   const handleClick = (component) => {
+    //setIsLoading(true);
     setCurrentComponent(component);
   };
 
