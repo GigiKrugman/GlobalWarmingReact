@@ -23,7 +23,7 @@
 
 .expandable-container--title h3 {
   margin: 0;
-  font-size: 24px; /* Reduced font size */
+  font-size: 18px; /* Reduced font size */
   font-weight: 600;
   color: rgb(40, 106, 60);
   margin-left: 0.5rem;
@@ -39,7 +39,7 @@
 .expandable-container--paragraph {
   margin: 0;
   color: rgb(42, 163, 78);
-  font-size: 20px; /* Reduced font size */
+  font-size: 16px; /* Reduced font size */
   font-weight: 600;
 }
 
@@ -48,14 +48,34 @@
 }
 
 /* Responsive styling */
-@media (min-width: 768px) {
-  .expandable-container--title {
-    font-size: 1.5rem;
+@media (min-width: 480px) {
+  .plus--button,
+  .minus--button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .expandable-container--title h3 {
+    font-size: 20px;
+  }
+
+  .expandable-container--paragraph {
+    font-size: 18px;
   }
 }
 
-@media (min-width: 992px) {
-  .expandable-container--title {
-    font-size: 2rem;
+@media (min-width: 768px) {
+  .plus--button,
+  .minus--button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .expandable-container--title h3 {
+    font-size: 24px;
+  }
+
+  .expandable-container--paragraph {
+    font-size: 20px;
   }
 }
