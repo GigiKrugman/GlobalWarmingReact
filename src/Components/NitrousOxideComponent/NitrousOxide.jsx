@@ -6,6 +6,7 @@ import { ReactComponent as NoSvg } from "../../assets/Images/NitrousOxide.svg";
 import textContent from "../../textContent";
 import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
 import Loading from "../LoadingComponent/Loading";
+import Error from "../ErrorComponent/Error";
 
 export default function NitrousOxide() {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ export default function NitrousOxide() {
       setData(response.data.nitrous);
       setIsLoading(false);
     } catch (error) {
-      console.log("Error loading data", error);
+      <Error />;
     }
   };
 

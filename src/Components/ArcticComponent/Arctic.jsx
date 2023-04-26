@@ -6,6 +6,7 @@ import { ReactComponent as ArcticSvg } from "../../assets/Images/arctic.svg";
 import textContent from "../../textContent";
 import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
 import Loading from "../LoadingComponent/Loading";
+import Error from "../ErrorComponent/Error";
 
 export default function Arctic() {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ export default function Arctic() {
       setData(response.data.arcticData);
       setIsLoading(false);
     } catch (error) {
-      console.log("Error loading data", error);
+      <Error />;
     }
   };
 

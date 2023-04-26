@@ -5,6 +5,7 @@ import { ReactComponent as MethaneSvg } from "../../assets/Images/Methane.svg";
 import textContent from "../../textContent";
 import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
 import Loading from "../LoadingComponent/Loading";
+import Error from "../ErrorComponent/Error";
 
 export default function Methane() {
   const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ export default function Methane() {
       setData(response.data.methane);
       setIsLoading(false);
     } catch (error) {
-      console.log("Error loading data", error);
+      <Error />;
     }
   };
 

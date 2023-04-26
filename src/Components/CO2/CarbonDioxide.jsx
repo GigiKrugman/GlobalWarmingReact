@@ -6,6 +6,7 @@ import { ReactComponent as CoSvg } from "../../assets/Images/CO2.svg";
 import textContent from "../../textContent";
 import ExpandableContainer from "../ExpandableContainer/ExpandableContainer";
 import Loading from "../LoadingComponent/Loading";
+import Error from "../ErrorComponent/Error";
 
 export default function CarbonDioxide() {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ export default function CarbonDioxide() {
       setData(response.data.co2);
       setIsLoading(false);
     } catch (error) {
-      console.log("Error loading data", error);
+      <Error />;
     }
   };
 
